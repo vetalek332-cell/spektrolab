@@ -1,8 +1,8 @@
 # СпектроЛаб
 
-[![CI](https://github.com/vetalek332-cell/spektrolab/actions/workflows/ci.yml/badge.svg)](https://github.com/vetalek332-cell/spektrolab/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+![Tests](https://img.shields.io/badge/tests-60%20passed-brightgreen)
 
 **Учебный USB-спектрометр 340–1050 нм: конструкция, ПО и методичка.**
 Дешёвый прибор для школ и вузов, который показывает настоящий спектр, измеряет температуру
@@ -154,7 +154,9 @@ PYTHONPATH=src python -m unittest discover -s tests -v   # 60 тестов
 spektrolab selftest                                      # быстрая проверка на живой машине
 ```
 
-CI гоняет тесты и самопроверку на Python 3.10/3.11/3.12 (Ubuntu, только numpy).
+Готовый workflow лежит в [`docs/ci.yml.example`](docs/ci.yml.example): скопируйте его в
+`.github/workflows/ci.yml` после `gh auth refresh -s workflow` (или добавьте файл через
+веб-интерфейс GitHub) — гоняет тесты и самопроверку на Python 3.10/3.11/3.12.
 
 ## Совместимость
 
