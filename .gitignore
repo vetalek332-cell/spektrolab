@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Тесты и инструменты
+tests/_artifacts/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Среда
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Локальные данные измерений
+*.local.json
+measurements/
+!docs/img/
