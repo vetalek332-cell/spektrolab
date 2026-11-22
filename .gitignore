@@ -27,3 +27,6 @@ Thumbs.db
 *.local.json
 measurements/
 !docs/img/
+
+# Бинарные STL выкладываются в релизе, в git только генератор
+hardware/stl/*.stl

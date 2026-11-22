@@ -131,6 +131,25 @@ SpektroLab - синтетический спектр
 
 Полный паспорт, BOM, OpenSCAD-модель и инструкция по сборке — в [`hardware/README.md`](hardware/README.md).
 
+## 3D-модель
+
+Печатная модель собрана скриптом на NumPy (SDF + marching tetrahedra) — без
+OpenSCAD и внешних 3D-библиотек. Шесть деталей, все замкнуты, объёмы и габариты
+проверены.
+
+![Сборка и внутренности](hardware/3d/preview.png)
+
+- Готовые STL: релиз [v0.3.0](https://github.com/vetalek332-cell/spektrolab/releases/tag/v0.3.0) (`spektrolab-stl.zip`).
+- Сгенерировать заново: `python hardware/cad/build_stl.py`
+- Паспорт модели и печать: [hardware/3d/README.md](hardware/3d/README.md)
+- Параметрический исходник: [hardware/cad/spektrolab_usb.scad](hardware/cad/spektrolab_usb.scad)
+
+## Презентация
+
+Питч-дек проекта (10 слайдов, PDF и PPTX) — в [docs/pitch/](docs/pitch/):
+там же заполненная таблица заявки. В файлах остались плейсхолдеры
+`[Имя Фамилия]`, `[@ваш_телеграм]` и ссылки на видео-демо — замените их перед отправкой.
+
 ## Структура репозитория
 
 ```
