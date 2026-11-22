@@ -1,4 +1,4 @@
-# Python
+﻿# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -28,5 +28,4 @@ Thumbs.db
 measurements/
 !docs/img/
 
-# Бинарные STL выкладываются в релизе, в git только генератор
-hardware/stl/*.stl
+

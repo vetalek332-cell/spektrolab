@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СпектроЛаб — демо: презентация и 3D-модель</title>
+<style>
+  :root{
+    --bg:#0b1220; --card:#121b2a; --card2:#172335; --border:#24334a;
+    --text:#e6edf3; --muted:#93a1b3; --accent:#58a6ff; --accent2:#ffb703;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  header{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.94);
+         border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+  .logo{font-weight:700;font-size:20px}
+  .logo span{color:var(--accent)}
+  nav{display:flex;gap:20px}
+  nav a{color:var(--muted);font-size:14px}
+  nav a:hover{color:var(--text)}
+  .btn{display:inline-block;padding:11px 20px;border-radius:11px;font-weight:600;
+       font-size:15px;border:1px solid var(--border);transition:.15s}
+  .btn-primary{background:var(--accent);color:#07111f;border-color:var(--accent)}
+  .btn-primary:hover{filter:brightness(1.08);text-decoration:none}
+  .btn-ghost{color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);text-decoration:none}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center;
+        padding:58px 0 30px}
+  .kicker{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.16em;
+          text-transform:uppercase;margin-bottom:14px}
+  h1{font-size:clamp(32px,4vw,50px);line-height:1.06;margin:0 0 16px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .lead{color:var(--muted);font-size:18px;margin:0 0 24px;max-width:34em}
+  .hero img{width:100%;border:1px solid var(--border);border-radius:16px;display:block}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
+  section{padding:46px 0}
+  h2{font-size:clamp(23px,2.6vw,32px);margin:0 0 8px}
+  .sub{color:var(--muted);margin:0 0 26px;max-width:48em}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .card img{width:100%;border-radius:11px;display:block;margin-bottom:14px}
+  .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .links a{font-size:13.5px}
+
+  .pitch-frame{width:100%;height:640px;border:1px solid var(--border);
+               border-radius:16px;background:#0d1522}
+  .pitch-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+
+  table{width:100%;border-collapse:collapse;background:var(--card);
+        border:1px solid var(--border);border-radius:14px;overflow:hidden}
+  th,td{padding:11px 14px;border-bottom:1px solid var(--border);text-align:left;font-size:14.5px}
+  th{color:var(--muted);font-weight:600;background:var(--card2)}
+  tr:last-child td{border-bottom:none}
+  .files{columns:2;column-gap:18px}
+  .files a{display:block;padding:7px 0;font-size:14.5px}
+  footer{border-top:1px solid var(--border);padding:24px 0 40px;color:#5e6e82;font-size:13px}
+  @media (max-width:900px){
+    .hero,.grid2{grid-template-columns:1fr}
+    nav{display:none}
+    .pitch-frame{height:420px}
+    .files{columns:1}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">Спектро<span>Лаб</span></div>
+    <nav>
+      <a href="#pitch">Презентация</a>
+      <a href="#model">3D-модель</a>
+      <a href="#specs">Характеристики</a>
+      <a href="https://github.com/vetalek332-cell/spektrolab">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="kicker">Демо-страница проекта</div>
+      <h1>Учебный <em>USB-спектрометр</em><br>340–1050 нм</h1>
+      <p class="lead">Прибор, ПО и 3D-модель: настоящий спектр, температура по закону
+        Планка и протокол лабораторной за 15 минут. Здесь — презентация и печатная модель,
+        код и документация — в репозитории.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#pitch">Смотреть презентацию</a>
+        <a class="btn btn-ghost" href="https://github.com/vetalek332-cell/spektrolab/releases/tag/v0.3.0">Скачать STL</a>
+        <a class="btn btn-ghost" href="https://github.com/vetalek332-cell/spektrolab">Код на GitHub</a>
+      </div>
+    </div>
+    <img src="img/3d_preview.png" alt="3D-модель спектрометра: сборка с крышкой и внутренний тракт">
+  </div>
+</div>
+
+<section id="pitch">
+  <div class="wrap">
+    <h2>Презентация проекта</h2>
+    <p class="sub">Питч-дек на 10 слайдов: проблема, решение, что уже готово, рынок,
+      бизнес-модель, конкуренты и план на 90 дней. PDF открывается прямо здесь,
+      PPTX и таблица заявки — для редактирования.</p>
+    <iframe class="pitch-frame" src="pitch/spektrolab_pitch.pdf#view=FitH"
+            title="Питч-дек СпектроЛаб"></iframe>
+    <div class="pitch-actions">
+      <a class="btn btn-ghost" href="pitch/spektrolab_pitch.pdf" target="_blank" rel="noopener">Открыть PDF в новой вкладке</a>
+      <a class="btn btn-ghost" href="pitch/spektrolab_pitch.pptx" download>Скачать PPTX</a>
+      <a class="btn btn-ghost" href="pitch/spektrolab_table.docx" download>Скачать таблицу заявки (DOCX)</a>
+    </div>
+  </div>
+</section>
+
+<section id="model">
+  <div class="wrap">
+    <h2>3D-модель</h2>
+    <p class="sub">Печатная модель собрана скриптом на NumPy (SDF + marching tetrahedra),
+      без OpenSCAD и внешних 3D-библиотек. Шесть деталей, все замкнуты, объёмы проверены.</p>
+    <div class="grid2">
+      <div class="card">
+        <img src="img/3d_preview.png" alt="Сборка и внутренности модели">
+        <h3>Сборка и оптический тракт</h3>
+        <p>Корпус с крышкой и вид без крышки: кассета щели, оправа коллиматора,
+          рамка решётки и кронштейн камеры.</p>
+        <div class="links">
+          <a href="https://github.com/vetalek332-cell/spektrolab/releases/tag/v0.3.0">Скачать STL (zip)</a>
+          <a href="https://github.com/vetalek332-cell/spektrolab/tree/main/hardware/3d">Паспорт модели</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/3d_parts.png" alt="Печатные детали модели">
+        <h3>Печатные детали</h3>
+        <p>Корпус, крышка, кассета щели, рамка решётки, оправа коллиматора и кронштейн
+          камеры. PETG, слой 0,2 мм, 3 стенки.</p>
+        <div class="links">
+          <a href="https://github.com/vetalek332-cell/spektrolab/tree/main/hardware/stl">STL в репозитории</a>
+          <a href="https://github.com/vetalek332-cell/spektrolab/blob/main/hardware/3d/README.md">Инструкция по печати</a>
+        </div>
+      </div>
+    </div>
+    <h3 style="margin-top:28px">Файлы модели</h3>
+    <div class="files">
+      <a href="https://github.com/vetalek332-cell/spektrolab/blob/main/hardware/stl/body.stl">body.stl — корпус</a>
+      <a href="https://github.com/vetalek332-cell/spektrolab/blob/main/hardware/stl/lid.stl">lid.stl — крышка</a>
+      <a href="https://github.com/vetalek332-cell/spektrolab/blob/main/hardware/stl/slit.stl">slit.stl — кассета щели</a>
+      <a href="https://github.com/vetalek332-cell/spektrolab/blob/main/hardware/stl/grating.stl">grating.stl — рамка решётки</a>
+      <a href="https://github.com/vetalek332-cell/spektrolab/blob/main/hardware/stl/lens.stl">lens.stl — оправа коллиматора</a>
+      <a href="https://github.com/vetalek332-cell/spektrolab/blob/main/hardware/stl/camera.stl">camera.stl — кронштейн камеры</a>
+    </div>
+  </div>
+</section>
+
+<section id="specs">
+  <div class="wrap">
+    <h2>Характеристики</h2>
+    <table>
+      <tr><th>Параметр</th><th>Значение</th></tr>
+      <tr><td>Диапазон</td><td>340–1050 нм в ПО; базовая версия 380–1050 нм, UV — от 340 нм</td></tr>
+      <tr><td>Оптическая схема</td><td>щель 0,03 мм → коллиматор f=40 мм → решётка 600 штр/мм → M12 f=6 мм</td></tr>
+      <tr><td>Дисперсия и разрешение</td><td>0,68 нм/пиксель, FWHM ≈1,8 нм на 546 нм</td></tr>
+      <tr><td>Сенсор</td><td>1920×1080, 1/2.9″, 2,8 мкм, без ИК-фильтра</td></tr>
+      <tr><td>Габариты и масса</td><td>120×80×46 мм, ≈230 г, PETG</td></tr>
+      <tr><td>Цены</td><td>9 900 ₽ (Home), 149 000 ₽ (Class, 15 приборов), 12 900 ₽ (UV)</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ссылки</h2>
+    <p class="sub">Всё открыто: код, конструкция, презентация и модель.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Репозиторий</h3>
+        <p>Ядро на NumPy, CLI, GUI на PySide6, 60 тестов, конструкция и документация.</p>
+        <div class="links"><a href="https://github.com/vetalek332-cell/spektrolab">github.com/vetalek332-cell/spektrolab</a></div>
+      </div>
+      <div class="card">
+        <h3>Релиз v0.3.0</h3>
+        <p>STL-архив модели, питч-дек и таблица заявки.</p>
+        <div class="links"><a href="https://github.com/vetalek332-cell/spektrolab/releases/tag/v0.3.0">Открыть релиз</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    СпектроЛаб · 2026 · демо-страница проекта. Код и конструкция — MIT.
+    Презентация содержит плейсхолдеры для имени и контактов — замените перед отправкой.
+  </div>
+</footer>
+
+</body>
+</html>
