@@ -5,6 +5,9 @@
 ![Tests](https://img.shields.io/badge/tests-60%20passed-brightgreen)
 
 **Учебный USB-спектрометр 340–1050 нм: конструкция, ПО и методичка.**
+
+Демо-страница (презентация + 3D-модель): **https://vetalek332-cell.github.io/spektrolab/**
+
 Дешёвый прибор для школ и вузов, который показывает настоящий спектр, измеряет температуру
 по закону Планка и оформляет протокол лабораторной.
 
@@ -139,13 +142,14 @@ OpenSCAD и внешних 3D-библиотек. Шесть деталей, в�
 
 ![Сборка и внутренности](hardware/3d/preview.png)
 
-- Готовые STL: релиз [v0.3.0](https://github.com/vetalek332-cell/spektrolab/releases/tag/v0.3.0) (`spektrolab-stl.zip`).
+- Готовые STL: в репозитории ([`hardware/stl/`](hardware/stl/)) и архивом в релизе [v0.3.0](https://github.com/vetalek332-cell/spektrolab/releases/tag/v0.3.0).
 - Сгенерировать заново: `python hardware/cad/build_stl.py`
 - Паспорт модели и печать: [hardware/3d/README.md](hardware/3d/README.md)
 - Параметрический исходник: [hardware/cad/spektrolab_usb.scad](hardware/cad/spektrolab_usb.scad)
 
 ## Презентация
 
+Демо-страница: <https://vetalek332-cell.github.io/spektrolab/>.
 Питч-дек проекта (10 слайдов, PDF и PPTX) — в [docs/pitch/](docs/pitch/):
 там же заполненная таблица заявки. В файлах остались плейсхолдеры
 `[Имя Фамилия]`, `[@ваш_телеграм]` и ссылки на видео-демо — замените их перед отправкой.
@@ -196,3 +200,4 @@ spektrolab selftest                                      # быстрая про
 
 MIT — см. [LICENSE](LICENSE). Конструкция и ПО открыты: можно собирать, продавать и
 дорабатывать, сохраняя упоминание проекта.
+
